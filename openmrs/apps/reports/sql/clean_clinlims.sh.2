@@ -1,0 +1,9 @@
+#!/bin/bash
+
+service bahmni-lab stop
+service openmrs stop
+psql -Upostgres -c "drop database clinlims;"
+cd /opt/bahmni-lab/migrations && scripts/initDB.sh bahmni-base.dump
+cd /opt/bahmni-lab/migrations/liquibase/ && /opt/bahmni-lab/migrations/scripts/migrateDb.sh
+
+service bahmni-lab start

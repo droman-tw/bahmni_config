@@ -20,21 +20,9 @@
             "patientInformation": {
                 "additionalPatientInformation": {
                     "title": "Additional Patient Information",
-                    "attributes": [
-                        "distanceFromCenter",
-                        "isUrban",
-                        "cluster",
-                        "RationCard",
-                        "familyIncome",
-                        "debt",
-                        "cluster"
-                    ]
+                    "attributes": [  ]
                 },
-                "hidden": {
-                    "attributes": [
-                        "primaryContact"
-                    ]
-                },
+                "hidden": { },
                 "defaults":  {
                     "class": "General",
                     "landHolding": 2

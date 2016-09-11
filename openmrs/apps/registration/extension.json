@@ -32,15 +32,38 @@
         "requiredPrivilege": "View Patients"
     },
     "nutritionalValues":{
-        "id": "bahmni.registration.conceptSetGroup.nutritionalLevels",
+        "id": "bahmni.registration.conceptSetGroup.nutritionalValues",
         "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
             "conceptName": "Nutritional Values",
-            "translationKey": "NUTRITIONAL_VALUES_LOCALE_KEY",
-            "conceptNames": ["Height", "Weight", "BMI", "BMI STATUS"],
+            "conceptNames": ["Height (cm)", "Weight (kg)"],
             "required":true,
             "showLatest": true
+        },
+        "order": 1,
+        "requiredPrivilege": "Edit Visits"
+    },
+    "vitals":{
+        "id": "bahmni.registration.conceptSetGroup.vitals",
+        "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "conceptName": "Vitals",
+            "required":true,
+            "showLatest": false
+        },
+        "order": 1,
+        "requiredPrivilege": "Edit Visits"
+    },
+    "patientHabits":{
+        "id": "bahmni.registration.conceptSetGroup.patientHabits",
+        "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "conceptName": "Patient Habit",
+            "required":true,
+            "showLatest": false
         },
         "order": 1,
         "requiredPrivilege": "Edit Visits"
@@ -51,7 +74,6 @@
         "type": "config",
         "extensionParams": {
             "conceptName": "Fee Information",
-            "translationKey": "FEE_INFORMATION_LOCALE_KEY",
             "required":true
         },
         "order": 2,

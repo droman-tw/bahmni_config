@@ -1,5 +1,38 @@
 {
-    "obsReportNoConfiguration": {
+
+   "diagnosisCountOpd": {
+        "name": "New and Followup Patient Count",
+        "type": "MRSGeneric",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/opdipdvisitcount.sql"
+        }
+   },
+
+ " mpleVisitReport": {
+        "name": "Visit Report",
+        "type": "visits",
+        "config": {
+            "forDataAnalysis": true,
+            "patientAttributes": [
+                "caste",
+                "class",
+                "education",
+                "occupation",
+                "primaryContact"
+            ],
+            "visitAttributes": [
+                "Visit Status",
+                "Admission Status"
+            ],
+            "patientAddresses": [
+                "address3",
+                "city_village"
+            ],
+            "applyDateRangeFor": "visitStopDate"
+        }
+    },
+
+  "obsReportNoConfiguration": {
         "name": "Test Observation Report with no Configuration",
         "type": "observations",
         "config": {}
@@ -97,29 +130,7 @@
         "config": {
         }
     },
-    "sampleVisitReport": {
-        "name": "Visit Report",
-        "type": "visits",
-        "config": {
-            "forDataAnalysis": true,
-            "patientAttributes": [
-                "caste",
-                "class",
-                "education",
-                "occupation",
-                "primaryContact"
-            ],
-            "visitAttributes": [
-                "Visit Status",
-                "Admission Status"
-            ],
-            "patientAddresses": [
-                "address3",
-                "city_village"
-            ],
-            "applyDateRangeFor": "visitStopDate"
-        }
-    },
+  
    "aggregateReports": {
        "name": "Pulse by gender",
        "type": "aggregation",
@@ -142,11 +153,34 @@
        }
    },
 
-   "diagnosisCountOpd": {
-        "name": "Diagnosis Count OPD (Custom SQL Report)",
-        "type": "MRSGeneric",
-        "config": {
-            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/diagnosisCountOPD.sql"
-        }
+ 
+
+
+"nameOfReport": {
+       "name": "Blood Pressure",
+       "type": "aggregation",
+       "config": {
+           "report":{
+               "type": "observations",
+               "config": {
+                   "conceptNamesToFilter":["Diastolic Data", "Systolic Data"],
+                   "showVisitInfo" : true,
+                   "forDataAnalysis": true,
+                   "visitAttributes": ["Visit Status", "Admission Status"],
+                    "visitTypesToFilter": ["IPD"]
+               }
+           },
+           "rowGroups": [
+               "Gender"
+           ],
+           "columnGroups": [
+               "Concept Name", "value"
+           ],
+           "distinctGroups": [
+               "Patient Identifier"
+           ],
+            "showTotalRow":true,
+            "showTotalColumn":true
+       }
    }
 }    

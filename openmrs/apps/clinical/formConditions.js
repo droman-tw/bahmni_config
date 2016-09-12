@@ -1,5 +1,5 @@
 Bahmni.ConceptSet.FormConditions.rules = {
-    'Diastolic' : function (formName, formFieldValues) {
+    'Diastolic Data' : function (formName, formFieldValues) {
         var systolic = formFieldValues['Systolic'];
         var diastolic = formFieldValues['Diastolic'];
         if (systolic || diastolic) {
@@ -12,7 +12,7 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }
     },
-    'Systolic' : function (formName, formFieldValues) {
+    'Systolic Data' : function (formName, formFieldValues) {
         var systolic = formFieldValues['Systolic'];
         var diastolic = formFieldValues['Diastolic'];
         if (systolic || diastolic) {

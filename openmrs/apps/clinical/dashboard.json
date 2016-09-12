@@ -154,8 +154,8 @@
                 "displayOrder": 11,
                 "dashboardConfig": {
                     "conceptNames": [
-                        "HEIGHT",
-                        "Weight",
+                        "Height (cm)",
+                        "Weight (kg)",
                         "BMI",
                         "BMI STATUS"
                     ],
